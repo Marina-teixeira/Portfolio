@@ -1,28 +1,159 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- AOS animação -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <!-- header -->
-     <section class="header">
+    <section class="header">
         <div class="header-text">
-            <h1>Bem-vindo ao meu portfólio</h1>
-            <p>Meu nome é Marina, sou desenvolvedora front-end. 
-        Crio interfaces modernas, bonitas e funcionais.</p>
+            <h1>Bem-vindo.</h1>
+            <p>Meu nome é Marina, sou desenvolvedora front-end.
+                Crio interfaces modernas, bonitas e funcionais.</p>
         </div>
 
         <div class="header-img">
             <img src="img/hero_setup.avif" alt="Ilustração">
         </div>
-     </section>
+    </section>
 
-     <!-- curva -->
-      <div class="wave"></div>
-    
+    <!-- curva -->
+    <div class="wave"></div>
+
+    <!-- projetos -->
+    <section class="projects">
+        <h2>Meus Projetos</h2>
+        <p class="subtitle">Uma seleção de projetos que eu desenvolvi.</p>
+
+        <div class="cards">
+            <div class="card" data-aos="fade-up">
+                <div class="card-img">
+                    <img src="img/Cover.jpg" alt="">
+                </div>
+
+                <div class="card-content">
+                    <h3>Projeto 1</h3>
+                    <p>Descrição do projeto um</p>
+
+                    <div class="icons">
+                        <a href="https://github.com/Marina-teixeira" target="_blank">
+                            <i class="ri-github-fill"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/marina-teixeira-9b1b83196/" target="_blank">
+                            <i class="ri-global-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-img">
+                    <img src="img/Cover.jpg" alt="">
+                </div>
+
+                <div class="card-content">
+                    <h3>Projeto 2</h3>
+                    <p>Descrição do projeto um</p>
+
+                    <div class="icons">
+                        <a href="https://github.com/Marina-teixeira" target="_blank">
+                            <i class="ri-github-fill"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/marina-teixeira-9b1b83196/" target="_blank">
+                            <i class="ri-global-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-img">
+                    <img src="img/Screen Preview.png" alt="">
+                </div>
+
+                <div class="card-content">
+                    <h3>Projeto 3</h3>
+                    <p>Descrição do projeto um</p>
+
+                    <div class="icons">
+                        <a href="https://github.com/Marina-teixeira" target="_blank">
+                            <i class="ri-github-fill"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/marina-teixeira-9b1b83196/" target="_blank">
+                            <i class="ri-global-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-aos="fade-up">
+                <div class="card-img">
+                    <img src="img/Screen Preview.png" alt="">
+                </div>
+
+                <div class="card-content">
+                    <h3>Projeto 4</h3>
+                    <p>Descrição do projeto um</p>
+
+                    <div class="icons">
+                        <a href="https://github.com/Marina-teixeira" target="_blank">
+                            <i class="ri-github-fill"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/marina-teixeira-9b1b83196/" target="_blank">
+                            <i class="ri-global-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- curva -->
+    <div class="wave-footer"></div>
+
+    <!-- footer -->
+    <footer>
+        <p>© 2026 seuportfolio.com</p>
+
+        <div class="social">
+            <a href="https://github.com/Marina-teixeira" target="_blank">
+                <i class="ri-github-fill"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/marina-teixeira-9b1b83196/" target="_blank">
+                <i class="ri-linkedin-fill"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+
 </body>
+
 </html>
