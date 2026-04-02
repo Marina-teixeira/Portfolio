@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 body {
-  background: #09021a;
-  color: white;
-  font-family: 'Inter', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background: #09021a;
+    color: white;
 }
 
 html {
@@ -18,30 +20,68 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 200px 10%;
+    gap: 70px;
+    padding: 220px 10%;
+    flex-wrap: wrap;
+}
+
+.header-text {
+    flex: 0 1 600px;
+    max-width: 600px;
 }
 
 .header h1 {
-    font-size: 80px;
+    font-size: 100px;
     font-weight: 600;
+    text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
+    animation: glow 2.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
+    }
+    100% {
+        text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff, 0 0 80px #00d4ff, 0 0 160px #00d4ff;
+    }
 }
 
 .header p {
     margin-top: 20px;
-    max-width: 500px;
+    max-width: 600px;
     color: #ccc;
+    min-height: 200px;
+    line-height: 1.6;
+}
+
+.header-img {
+    flex: 0 1 auto;
+    display: flex;
+    justify-content: center;
 }
 
 .header img {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.typewriter.typing::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
 }
 
 /* curva */
 .wave {
     height: 100px;
     background: white;
-    border-top-left-radius: 50% 100px;
-    border-top-right-radius: 50% 100px;
+    border-top-left-radius: 80% 100px;
+    border-top-right-radius: 80% 100px;
 }
 
 .wave-footer {
@@ -63,8 +103,8 @@ html {
 }
 
 .subtitle {
-  color: #666;
-  margin-top: 10px;
+    color: #666;
+    margin-top: 10px;
 }
 
 .cards {
@@ -82,15 +122,15 @@ html {
     width: 450px;
     transition: 0.3s;
     overflow: hidden;
-    box-shadow: 
-    0 10px 30px rgba(0,0,0,0.05),
-    0 20px 60px rgba(0,0,0,0.08);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.05),
+        0 20px 60px rgba(0, 0, 0, 0.08);
     text-align: left;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
 }
 
 .card-img {
@@ -104,6 +144,11 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card-img img:hover {
+  transform: scale(1.05); 
 }
 
 .card-img::after {
@@ -113,22 +158,25 @@ html {
     bottom: 0;
     width: 100%;
     height: 80px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0), #f5f5f5);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #f5f5f5);
 }
 
 .card-content {
-  padding: 20px;
+    padding: 20px;
 }
 
 .card h3 {
-  font-size: 20px;
-  color: #1a1a2e;
+    font-size: 20px;
+    color: #1a1a2e;
 }
 
 .card p {
-  color: #555;
-  margin-top: 10px;
-  font-size: 14px;
+    color: #1a1a2e;
+    margin-top: 10px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    /* font-weight: 200; */
+    line-height: 1.6;
 }
 
 .icons {
@@ -141,7 +189,7 @@ html {
 }
 
 .icons a:hover {
-  opacity: 0.6;
+    opacity: 0.6;
 }
 
 footer {
@@ -167,17 +215,89 @@ footer a {
 }
 
 footer a:hover {
-  opacity: 0.7;
+    opacity: 0.7;
 }
 
 /* RESPONSIVO */
-@media (max-width: 900px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 768px) {
+    .header {
+        padding: 100px 10%;
+        gap: 20px;
+    }
 
-  .hero {
-    flex-direction: column;
-    text-align: center;
+    .header h1 {
+        font-size: 60px;
+    }
+
+    .header p {
+        min-height: 150px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 80px 10%;
+    }
+
+    .header h1 {
+        font-size: 48px;
+    }
+
+    .header p {
+        min-height: 120px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 900px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: 80px auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+  animation: zoom 0.3s ease;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
   }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
 }

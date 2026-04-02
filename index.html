@@ -5,15 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio</title>
-
-    <!-- Fonte -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <!-- Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-
-    <!-- AOS animação -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -23,8 +17,7 @@
     <section class="header">
         <div class="header-text">
             <h1>Bem-vindo.</h1>
-            <p>Meu nome é Marina, sou desenvolvedora front-end.
-                Crio interfaces modernas, bonitas e funcionais.</p>
+            <p class="typewriter" data-text="Meu nome é Marina, sou desenvolvedora front-end. Já trabalhei em diversos tipos de projetos, desde aplicações interativas até plataformas web, sempre com foco na criação de interfaces modernas, bem estruturadas e visualmente atraentes."></p>
         </div>
 
         <div class="header-img">
@@ -48,7 +41,10 @@
 
                 <div class="card-content">
                     <h3>Stylish</h3>
-                    <p>Explore e compre roupas de forma simples e intuitiva, com navegação por categorias, páginas de produtos detalhadas e um fluxo de compra otimizado. Desenvolvi o design UI/UX deste aplicativo com foco em uma experiência moderna e fluida, priorizando clareza visual e usabilidade. O fronted desse aplicativo está sendo desenvolvido com a utilização de React Native.</p>
+                    <p>Explore e compre roupas de forma simples e intuitiva, com navegação por categorias, páginas de
+                        produtos detalhadas e um fluxo de compra otimizado. Desenvolvi o design UI/UX deste aplicativo
+                        com foco em uma experiência moderna e fluida, priorizando clareza visual e usabilidade. O
+                        fronted desse aplicativo está sendo desenvolvido com a utilização de React Native.</p>
 
                     <div class="icons">
                         <a href="https://github.com/Marina-teixeira" target="_blank">
@@ -69,7 +65,11 @@
 
                 <div class="card-content">
                     <h3>TODO App</h3>
-                    <p>Organize suas tarefas do dia a dia de forma simples e eficiente, com criação de listas, gerenciamento de atividades e acompanhamento do progresso. Desenvolvi o design UI/UX deste aplicativo com foco em uma experiência prática e intuitiva, além de implementar o front-end utilizando React Native. O projeto foi pensado para oferecer uma navegação fluida e uma interface limpa, facilitando a produtividade do usuário.</p>
+                    <p>Organize suas tarefas do dia a dia de forma simples e eficiente, com criação de listas,
+                        gerenciamento de atividades e acompanhamento do progresso. Desenvolvi o design UI/UX deste
+                        aplicativo com foco em uma experiência prática e intuitiva, além de implementar o front-end
+                        utilizando React Native. O projeto foi pensado para oferecer uma navegação fluida e uma
+                        interface limpa, facilitando a produtividade do usuário.</p>
 
                     <div class="icons">
                         <a href="https://github.com/Marina-teixeira" target="_blank">
@@ -90,7 +90,10 @@
 
                 <div class="card-content">
                     <h3>Brewly</h3>
-                    <p>Descubra e compre cafés de forma simples e envolvente, com navegação por categorias, detalhes sobre origem, intensidade e notas dos grãos, além de um fluxo de compra otimizado. Desenvolvi o design UI/UX deste aplicativo com foco em uma experiência acolhedora e intuitiva, valorizando a apresentação dos produtos e a clareza das informações.</p>
+                    <p>Descubra e compre cafés de forma simples e envolvente, com navegação por categorias, detalhes
+                        sobre origem, intensidade e notas dos grãos, além de um fluxo de compra otimizado. Desenvolvi o
+                        design UI/UX deste aplicativo com foco em uma experiência acolhedora e intuitiva, valorizando a
+                        apresentação dos produtos e a clareza das informações.</p>
 
                     <div class="icons">
                         <a href="https://github.com/Marina-teixeira" target="_blank">
@@ -111,7 +114,10 @@
 
                 <div class="card-content">
                     <h3>Tempo</h3>
-                    <p>Acompanhe as condições do clima de forma rápida e intuitiva, com previsões horárias e semanais, além de informações detalhadas como temperatura, umidade e chance de chuva. Desenvolvi o design UI/UX deste aplicativo com foco em clareza e facilidade de uso, priorizando uma visualização limpa e organizada dos dados.</p>
+                    <p>Acompanhe as condições do clima de forma rápida e intuitiva, com previsões horárias e semanais,
+                        além de informações detalhadas como temperatura, umidade e chance de chuva. Desenvolvi o design
+                        UI/UX deste aplicativo com foco em clareza e facilidade de uso, priorizando uma visualização
+                        limpa e organizada dos dados.</p>
 
                     <div class="icons">
                         <a href="https://github.com/Marina-teixeira" target="_blank">
@@ -130,6 +136,11 @@
 
     <!-- curva -->
     <div class="wave-footer"></div>
+
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
 
     <!-- footer -->
     <footer>
@@ -152,6 +163,73 @@
             duration: 800,
             once: true
         });
+
+        gsap.from(".header-text h1", {
+            opacity: 0,
+            y: 40,
+            blur: 10,
+            duration: 1,
+            delay: 0.2
+        });
+
+        gsap.from(".header-text p", {
+            opacity: 0,
+            y: 40,
+            blur: 10,
+            duration: 1,
+            delay: 0.4
+        });
+
+        gsap.from(".header-img", {
+            opacity: 0,
+            y: 40,
+            blur: 10,
+            duration: 1,
+            delay: 0.6
+        });
+
+        const modal = document.getElementById("modal");
+        const modalImg = document.getElementById("modal-img");
+        const closeBtn = document.querySelector(".close");
+
+        // seleciona TODAS as imagens dos cards
+        document.querySelectorAll(".card-img img").forEach(img => {
+            img.addEventListener("click", () => {
+                modal.style.display = "block";
+                modalImg.src = img.src;
+            });
+        });
+
+        // fechar
+        closeBtn.onclick = () => {
+            modal.style.display = "none";
+        };
+
+        // fechar clicando fora da imagem
+        modal.onclick = (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        const element = document.querySelector('.typewriter');
+        const text = element.getAttribute('data-text');
+        element.innerHTML = '';
+        let i = 0;
+
+        element.classList.add('typing');
+
+        function typeWriter() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            } else {
+                element.classList.remove('typing');
+            }
+        }
+
+        setTimeout(typeWriter, 40);
     </script>
 
 </body>
